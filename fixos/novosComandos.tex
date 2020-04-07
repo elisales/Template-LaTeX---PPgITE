@@ -1,0 +1,98 @@
+\newcommand{\curso}[1]{\def\imprimircurso{#1}}
+\newcommand{\dataDaAprovacao}[1]{\def\imprimirdatadaaprovacao{#1}}
+\newcommand{\tituloEstrangeiro}[1]{\def\imprimirtituloestrangeiro{#1}}
+
+\renewcommand{\imprimircapa}{%
+  \begin{capa}
+    \begin{center}
+
+      % Cabeçalho (não deve ser modificado)
+      % Contém o brasão da Universidade, além dos dados
+      % relacionados à vinculação do aluno (Universidade, Centro, Departamento e Curso)
+      \begin{figure}
+        \begin{center}
+          \includegraphics[width=2.53cm, height=3.1cm]{imagens/brasao.png}
+        \end{center}
+      \end{figure}
+        \begin{center}
+            {\large \textsc{Universidade Federal do Rio Grande do Norte}}
+            \vspace{-0.3cm}
+        \end{center}	
+        \begin{center}
+            {\large \textsc{Instituto Metrópole Digital}}
+            \vspace{-0.3cm}
+        \end{center}
+        \begin{center}
+          {\large \textsc{Programa de Pós-Graduação em Inovação em Tecnologias Educacionais}}
+        \end{center}
+
+      \vspace{6cm}
+
+      % Título do trabalho
+      {\setlength{\baselineskip}
+      {1.3\baselineskip}
+      {\LARGE \textsc{\imprimirtitulo}}\par}
+
+      \vspace{8cm}
+
+      % Nome do aluno (autor)
+
+      {\Large \textsc{\imprimirautor}}
+
+      % Local da instituição onde o trabalho deve ser apresentado e ano de entrega do mesmo
+      {\Large \imprimirlocal, \imprimirdata} 
+    \end{center}
+  \end{capa}
+
+  % Solução para geração de páginas duplicadas, uma delas fica em branco
+  \hypersetup{pageanchor=true}
+}
+
+% Conteudo padrao da Folha de Rosto
+\makeatletter
+\renewcommand{\folhaderostocontent} {
+  \begin{center}
+
+ \begin{figure}
+        \begin{center}
+          \includegraphics[width=2.53cm, height=2.96cm]{imagens/brasao.png}
+        \end{center}
+      \end{figure}
+      \begin{center}
+            {\large \textsc{Universidade Federal do Rio Grande do Norte}}
+            \vspace{-0.3cm}
+        \end{center}
+        \begin{center}
+            {\large \textsc{Instituto Metrópole Digital}}
+            \vspace{-0.3cm}
+        \end{center}
+        \begin{center}
+          {\large \textsc{Programa de Pós-Graduação em Inovação em Tecnologias Educacionais}}
+        \end{center}
+
+	\vspace{3cm}
+
+ 	\begin{center}
+      {\LARGE \textsc{\imprimirtitulo}}\par
+    \end{center}
+    
+    \vspace{3cm}
+
+    {\large \textsc{\imprimirautor}}
+\SingleSpacing
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+      \begin{OnehalfSpace}
+          {\large \imprimirpreambulo}
+      \end{OnehalfSpace}
+      \end{minipage}%
+    }%
+\SingleSpacing
+    {\Large\imprimirlocal}
+    
+    {\Large\imprimirdata}
+
+  \end{center}
+}
+\makeatother
